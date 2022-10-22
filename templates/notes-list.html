@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} My Notes {% endblock %}
+
+{% block main %}
+
+<h1 class="text-center my-5">{{heading}}</h1>
+
+{% if notes %}
+
+    {% for note in notes %}
+    <div class="card p-5 my-3">
+        <h1>{{note.title}}</h1>
+        <span class="my-2">Created by {{note.user.username}} | Created At {{note.created_at}}</span>
+        <p>{{note.description|truncatewords:30}}</p>
+        <div class="my-3">
+            <a href="/note/{{note.id}}/" class="btn btn-dark">View</a>
+            {% if user == note.user %}
+                <a href="/update/{{note.id}}/" class="btn btn-success">Update</a>
+                <a href="/delete/{{note.id}}/" class="btn btn-danger">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+
+{% else %}
+    <p class="my-5">There is no notes.. create notes first .. <a href="/create/" class="btn btn-dark">Create Note</a></p>
+{% endif %}
+
+{% endblock %}

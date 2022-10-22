@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} {{note.title}} {% endblock %}
+
+{% block main %}
+<div class="p-5 my-3">
+    <h1 class="text-center">{{note.title}}</h1>
+    <span class="my-2">Created by {{note.user.username}} | Created At {{note.created_at}}</span>
+    <p class="my-4">{{note.description}}</p>
+    <div class="my-3">
+        {% if user == note.user %}
+                <a href="/update/{{note.id}}/" class="btn btn-success">Update</a>
+                <a href="/delete/{{note.id}}/" class="btn btn-danger">Delete</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

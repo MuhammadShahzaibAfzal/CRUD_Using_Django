@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} DELETE {% endblock %}
+
+{% block main %}
+
+<h2>Are you sure you want to delete {{note.title}} ? </h2>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="YES" class="btn btn-danger">
+    <a href="/my-notes/" class="btn btn-primary">NO</a>
+</form>
+
+{% endblock %}

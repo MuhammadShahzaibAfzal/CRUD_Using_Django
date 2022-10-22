@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block main %}
+
+<h1>Welcome Back !</h1>
+<p>Login to see your notes</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter username" class="form-control" required><br>
+    <input type="password" name="password" placeholder="Enter password" class="form-control" required><br>
+    <input type="submit" value="LOGIN" class="btn btn-dark">
+    <p class="my-2">Don't have an account ? <a href="/register/">Register Now</a></p>
+</form>
+
+{% endblock %}
