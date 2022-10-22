@@ -1,5 +1,5 @@
 <h1> About Project </h1>
-<p>Perform CRUD operations and Authentication</p>
+<p>Perform CRUD operations and Authentication Using DJANGO</p>
 <p> In this project I create a note app in which user can create,update,delete and get all the notes
 . First user must create account and login then he create, update and delete the notes </p>
 
